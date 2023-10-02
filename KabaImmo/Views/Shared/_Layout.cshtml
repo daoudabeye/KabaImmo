@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <base href="~/">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <!-- Page Title  -->
+    <title>@ViewData["Title"] - KabaImmo</title>
+    <!-- StyleSheets  -->
+
+    <link rel="stylesheet" href="~/css/dashlite.css" asp-append-version="true">
+    <link id="skin-default" rel="stylesheet" href="~/css/theme.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/KabaImmo.styles.css" asp-append-version="true" />
+</head>
+<body class="nk-body bg-lighter npc-default has-sidebar ">
+
+    <div class="nk-app-root">
+        <!-- main -->
+        <div class="nk-main ">
+            <!-- sidebar -->
+            <partial name="partials/sidebar" />
+
+            <!-- sidebar -->
+            <!-- wrap -->
+            <div class="nk-wrap ">
+                <!-- main header -->
+                <partial name="partials/main_header"/>
+                <!-- main header  -->
+                <!-- content -->
+                <div class="nk-content ">
+                    <div class="container-fluid">
+                        <div class="nk-content-inner">
+                            <div class="nk-content-body">
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- content  -->
+                <!-- footer -->
+                <partial name="partials/footer" />
+                <!-- footer -->
+            </div>
+            <!-- wrap -->
+        </div>
+    </div>
+
+    <!-- Jquery library from Google ... -->
+    <script src="~/js/bundle.js?ver=3.2.3"></script>
+    <script src="~/js/scripts.js?ver=3.2.3"></script>
+
+    <!-- ... but if something goes wrong get Jquery from local file -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
