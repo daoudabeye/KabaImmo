@@ -1,0 +1,1078 @@
+/*===========================
+    2.HEADER css 
+===========================*/
+
+
+.appie-sticky {
+    &.sticky {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 1010;
+        background: $white;
+        box-shadow: 0 15px 30px 0 #0000000f;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        animation: sticky 1.2s;
+    }
+}
+
+
+
+.appie-header-area {
+    padding-top: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 999;
+
+    &.appie-header-2-area {
+        & .appie-btn-box {
+            & .main-btn {
+                background: $theme-color-2;
+                border-radius: 30px;
+                border-color: $theme-color-2;
+
+                &:hover {
+                    background: transparent;
+                    color: $theme-color-2;
+                }
+            }
+        }
+    }
+
+    .appie-header-main-menu ul li .mega-menu-main-wrap {
+        width: 1170px;
+        position: absolute;
+        background: #fff;
+        opacity: 0;
+        visibility: hidden;
+        transition: .4s ease-in-out;
+        transform: scaleY(0);
+        transform-origin: top center;
+        text-align: center;
+        left: -200px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+        padding-top: 30px;
+    }
+
+    .appie-header-main-menu ul li:hover .mega-menu-main-wrap {
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+
+    }
+
+    ul.mega-menu-home {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        column-gap: 20px;
+        padding: 0px 20px;
+    }
+
+    .appie-header-main-menu ul li .mega-menu-main-wrap .mega-menu-home li {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .appie-header-main-menu ul li .mega-menu-main-wrap .mega-menu-home li img{
+        width: 100%;
+        height: 240px;
+    }
+
+    .appie-header-main-menu ul li .mega-menu-home li a:hover {
+        color: #2B70FA
+    }
+
+    .appie-header-main-menu ul li .mega-menu-home li img {
+        box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+        height: 280px;
+        transition: .5s ease-in-out;
+    }
+
+    .appie-header-main-menu ul li .mega-menu-home li:hover img {
+        transform: translateY(-15px);
+    }
+
+    /* pages dropdown CSS */
+    .appie-header-main-menu ul li .pages-mega-menu {
+        width: 1170px !important;
+        position: absolute;
+        background: #fff;
+        padding: 15px 30px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+        padding-top: 40px !important;
+        opacity: 0;
+        visibility: hidden;
+        transform: scaleY(0);
+        transition: .4s ease-in-out;
+        transform-origin: top center;
+        left: -291px;
+        margin: auto;
+        padding-left: 40px;
+        padding-bottom: 30px;
+    }
+
+    .appie-header-main-menu ul li:hover .pages-mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+    }
+
+    .appie-header-main-menu ul li .pages-mega-menu ul {
+        float: left;
+        width: auto;
+    }
+
+    .appie-header-main-menu ul li .pages-mega-menu ul li {
+        display: block;
+    }
+
+    .appie-header-main-menu ul li .pages-mega-menu ul li a {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 40px;
+    }
+
+    .appie-header-main-menu ul li .pages-mega-menu ul li a:hover {
+        color: #2B70FA;
+    }
+
+    .appie-header-main-menu ul li .pages-mega-menu ul li:first-child a {
+        font-size: 18px;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .hot::after {
+        content: "HOT";
+        font-size: 12px;
+        position: absolute;
+        top: -13px;
+        right: -1px;
+        background: #D41212;
+        height: 20px;
+        line-height: 21px;
+        width: 40px !important;
+        display: block;
+        text-align: center;
+        color: #fff;
+    }
+
+    .hot::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 0 0 18px;
+        border-color: transparent transparent transparent #D41212;
+        position: absolute;
+        right: 15px;
+        bottom: 32px;
+        transform: rotate(-120deg);
+    }
+
+    .feature::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 0 0 18px;
+        border-color: transparent transparent transparent #D41212;
+        position: absolute;
+        right: 15px;
+        bottom: 30px;
+        transform: rotate(-120deg);
+    }
+
+    .feature::after {
+        content: "feature";
+        font-size: 13px;
+        position: absolute;
+        top: -10px;
+        right: -1px;
+        background: #D41212;
+        height: 19px;
+        line-height: 19px;
+        width: 62px !important;
+        display: block;
+        text-align: center;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+
+    .projects::after {
+        content: "PROJECTS";
+        font-size: 12px;
+        position: absolute;
+        top: -14px;
+        right: -46px;
+        background: #2b70fa;
+        height: 20px;
+        line-height: 21px;
+        width: 70px !important;
+        display: block;
+        text-align: center;
+        color: #fff;
+    }
+
+    .projects::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 0 0 13px;
+        border-color: transparent transparent transparent #2b70fa;
+        position: absolute;
+        right: 4px;
+        bottom: 30px;
+        transform: rotate(-120deg);
+    }
+
+    .mega-menu-recent-ports ul {
+        overflow: hidden;
+    }
+
+    .mega-r-post {
+        font-size: 18px;
+        font-weight: 500;
+        color: #0e1133;
+        margin-top: 8px;
+        margin-bottom: 25px;
+    }
+
+    .mega-recent-post-text img {
+        float: left;
+        width: 23%;
+    }
+
+    .mega-menu-ul-block {
+        float: none !important;
+        width: 325px !important;
+    }
+
+    .mega-recent-post-text a {
+        display: block;
+    }
+
+    .mega-recent-post-text h5 {
+        font-size: 16px;
+        font-family: roboto;
+        font-weight: 400;
+        line-height: 20px;
+        font-weight: 500;
+        transition: .3s;
+    }
+
+    .mega-recent-post-text h5:hover {
+        color: #2B70FA;
+    }
+
+    .mega-recent-post-text ul li {
+        font-size: 14px;
+        color: #5E5E5E;
+    }
+
+    .mega-recent-post-text ul li a {
+        font-size: 14px !important;
+        color: #5E5E5E;
+    }
+
+    .mega-recent-right-txt {
+        float: right;
+        width: 73%;
+    }
+
+    .mega-menu-ul-block-lst li {
+        display: inline-block !important;
+    }
+
+    .blog-comment {
+        margin-left: -25px;
+        font-weight: 400 !important;
+        font-size: 14px !important;
+    }
+
+    .recent-right-text {
+        margin-bottom: 15px !important;
+        display: block !important;
+        overflow: hidden;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .mega-menu-ul-block li:last-child {
+        border: none;
+    }
+
+    .mega-recent-ftxt {
+        text-transform: inherit !important;
+    }
+
+    .appie-header-main-menu ul li .blog-mega-menu {
+        width: 750px !important;
+    }
+
+    .blog-wrap-ul {
+        width: 26% !important;
+    }
+
+    .blog-wrap-ul:nth-child(2) {
+        width: 30% !important;
+    }
+
+
+    .pages-mega-menu.mega-menu-mainn-wrap {
+        padding-left: 100px !important;
+    }
+
+    .pages-mega-menu.mega-menu-mainn-wrap ul {
+        margin: 0 25px;
+    }
+
+    .mega-menu-ul-block {
+        margin-left: 0 !important;
+    }
+
+
+    &.appie-header-3-area {
+        &.appie-sticky {
+            &.sticky {
+                background: $heading-color;
+            }
+        }
+    }
+
+    &.appie-header-4-area {
+        &.appie-sticky {
+            &.sticky {
+                background: linear-gradient(90deg, rgba(107, 31, 205, 1) 0%, rgba(55, 78, 222, 1) 100%);
+            }
+        }
+
+    }
+
+    &.appie-header-9-area {
+        border-bottom: 1px solid #5973FE;
+        padding-bottom: 30px;
+
+        &.appie-sticky {
+            &.sticky {
+                background: linear-gradient(90deg, #1C61FE 0%, #9238F3 100%);
+                padding-top: 30px;
+            }
+        }
+
+        & .appie-btn-box {
+            & .main-btn {
+                background: $theme-color-8;
+                border-color: $theme-color-8;
+
+                &:hover {
+                    background: transparent;
+                    color: $white;
+                    border-color: $white;
+
+                }
+            }
+        }
+    }
+
+    &.appie-header-10-area {
+        border-bottom: 1px solid #33a9ff;
+        padding-bottom: 30px;
+
+        &.appie-sticky {
+            &.sticky {
+                background: linear-gradient(90deg, #1580ff 0%, #05beff 100%);
+                padding-top: 30px;
+            }
+        }
+
+        .header-nav-box-10 {
+
+            .appie-header-main-menu {
+
+                > ul {
+                   > li > a{
+                        color: #fff;
+                    }
+                } 
+            } 
+
+            .appie-btn-box {
+
+                .login-btn{
+                    color: #fff;
+                }
+
+                 .main-btn {
+                    background: #fff;
+                    border-color: #fff;
+                    color: $heading-color;
+
+                    &:hover {
+                        color: $theme-color-10;
+                        border-color: $white;
+                    }
+                }
+
+                .toggle-btn{
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &.appie-header-page-area {
+        &.appie-sticky {
+            &.sticky {
+                background: #0a44b9;
+            }
+        }
+
+    }
+
+    &.appie-header-7-area {
+        &.appie-sticky {
+            &.sticky {
+                background: #290645;
+            }
+        }
+    }
+
+    &.appie-header-error-page {
+        box-shadow: 0px 10px 20px 0px rgba(14, 17, 51, 0.1);
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+
+
+
+
+.header-nav-box {
+    & .appie-btn-box {
+        position: relative;
+
+        @media #{$md} {
+            padding-right: 50px;
+        }
+
+        @media #{$xs} {
+            padding-right: 30px;
+        }
+
+        & .login-btn {
+            color: $heading-color;
+            font-size: 15px;
+            font-weight: 500;
+
+            & i {
+                padding-right: 6px;
+            }
+        }
+
+        & .main-btn {
+            @media #{$xs} {
+                display: none;
+            }
+
+            @media #{$sm} {
+                padding: 0 10px;
+                display: inline-block;
+            }
+        }
+    }
+
+    &.header-nav-box-3 {
+        & .appie-header-main-menu {
+            & ul {
+                &>li {
+                    &>a {
+                        color: $white;
+                    }
+
+                    & .sub-menu {
+                        & li {
+                            & a {
+                                color: $heading-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        & .appie-btn-box {
+            & .login-btn {
+                color: $white;
+            }
+
+            & .main-btn {
+                background: $theme-color-3;
+                border-color: $theme-color-3;
+
+                &:hover {
+                    background: transparent;
+                    color: $theme-color-3;
+                }
+            }
+        }
+
+        & .toggle-btn {
+            color: $white;
+            font-size: 20px;
+        }
+
+        &.header-nav-box-inner-page {
+            & .appie-btn-box {
+                & .main-btn {
+                    border-color: $white;
+                    background: transparent;
+
+                    &:hover {
+                        background: $white;
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &.header-nav-box-5 {
+        & .appie-header-main-menu {
+            & ul {
+                &>li {
+                    &>a {
+                        color: $white;
+                    }
+
+                    & .sub-menu {
+                        & li {
+                            & a {
+                                color: $heading-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        & .appie-btn-box {
+            & .login-btn {
+                color: $white;
+            }
+
+            & .main-btn {
+                background: $theme-color-5;
+                border-color: $theme-color-5;
+
+                &:hover {
+                    background: transparent;
+                    color: $theme-color-5;
+                }
+            }
+        }
+
+        & .toggle-btn {
+            color: $white;
+            font-size: 20px;
+        }
+    }
+
+    &.header-nav-4-box {
+        & .appie-header-main-menu {
+            & ul {
+                &>li {
+                    &>a {
+                        &:hover {
+                            color: $theme-color-4;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .appie-btn-box {
+            & .main-btn {
+                background: $theme-color-4;
+                border-color: $theme-color-4;
+
+                &:hover {
+                    background: transparent;
+                    color: $theme-color-4;
+                }
+            }
+
+            & ul {
+                @media #{$xs} {
+                    margin-right: 10px;
+                }
+
+                & li {
+                    display: inline-block;
+
+                    & a {
+                        font-size: 18px;
+                        color: $heading-color;
+                        margin-left: 15px;
+
+                        &.cart-btn {
+                            position: relative;
+
+                            & span {
+                                position: absolute;
+                                top: -7px;
+                                display: inline-block;
+                                right: -12px;
+                                height: 20px;
+                                width: 20px;
+                                text-align: center;
+                                line-height: 20px;
+                                color: $white;
+                                font-size: 11px;
+                                background: $theme-color-4;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.header-nav-box-6 {
+        & .main-btn {
+            background: $theme-color-6;
+            border-color: $theme-color-6;
+
+            &:hover {
+                background: transparent;
+                color: $theme-color-6;
+            }
+        }
+
+        & .appie-header-main-menu {
+            & ul {
+                &>li {
+                    &>a {
+                        &:hover {
+                            color: $theme-color-6;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .appie-btn-box {
+            & form {
+                display: inline-block;
+                margin-left: 18px;
+
+                @media #{$xs} {
+                    display: none;
+                }
+
+                @media #{$sm} {
+                    display: inline-block;
+                }
+
+                & .input-box {
+                    position: relative;
+
+                    & i {
+                        position: absolute;
+                        left: 20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
+                    & input {
+                        width: 105px;
+                        padding-left: 50px;
+                        border: 0;
+                        border-left: 1px solid #ddddea;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &.header-nav-box-7 {
+        & .appie-header-main-menu {
+            & ul {
+                &>li {
+                    &>a {
+                        color: $white;
+
+                        &:hover {
+                            color: $theme-color;
+                        }
+                    }
+
+                    & .sub-menu {
+                        & li {
+                            & a {
+                                color: $text-color;
+
+                                &:hover {
+                                    color: $theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        & .appie-btn-box {
+            & .login-btn {
+                color: $white;
+            }
+
+            & .toggle-btn {
+                color: $white;
+            }
+        }
+    }
+
+    &.header-nav-box-9 {
+        & .appie-header-main-menu {
+            & ul {
+                &>li {
+                    &>a {
+                        color: $white;
+
+                        &:hover {
+                            color: $theme-color-8;
+                        }
+                    }
+
+                    & .sub-menu {
+                        & li {
+                            & a {
+                                color: $heading-color;
+
+                                &:hover {
+                                    color: $theme-color-8;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        & .appie-btn-box {
+            & .login-btn {
+                color: $white;
+            }
+
+            & .toggle-btn {
+                color: $white;
+            }
+        }
+    }
+}
+
+
+
+
+.appie-header-main-menu {
+    @media #{$md} {
+        display: none;
+    }
+
+    @media #{$xs} {
+        display: none;
+    }
+
+    & ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        &>li {
+            display: inline-block;
+            margin-right: 30px;
+            position: relative;
+
+            @media #{$lg} {
+                margin-right: 14px;
+            }
+
+            &>a {
+                font-size: 15px;
+                font-weight: 500;
+                color: $heading-color;
+                line-height: 45px;
+
+                & i {
+
+                    padding-left: 6px;
+                }
+            }
+
+            & .sub-menu {
+                position: absolute;
+                left: 0;
+                top: 110%;
+                width: auto;
+                min-width: 220px;
+                max-width: 220px;
+                background-color: $white;
+                opacity: 0;
+                visibility: hidden;
+                transition: all linear 0.3s;
+                z-index: 99;
+                @include box-shadow (11px 10px 38px 0 rgba(46, 63, 99, 0.15));
+                list-style-type: none;
+                margin: 0;
+                padding: 15px 0;
+                border-radius: 5px;
+                text-align: left;
+
+                @media #{$laptop} {
+                    min-width: 200px;
+                    max-width: 200px;
+                }
+
+                @media #{$lg} {
+                    min-width: 200px;
+                    max-width: 200px;
+                }
+
+
+                @media #{$md} {
+                    position: relative;
+                    width: 100%;
+                    left: 0;
+                    top: auto;
+                    opacity: 1;
+                    visibility: visible;
+                    display: none;
+                    right: auto;
+                    @include transform(translateX(0%));
+                    @include transition(none);
+                    @include box-shadow(none);
+                    text-align: left;
+                    border-top: 0;
+                    transition: 0s;
+                    padding: 0;
+                }
+
+                @media #{$xs} {
+                    position: relative;
+                    width: 100%;
+                    left: 0;
+                    top: auto;
+                    opacity: 1;
+                    visibility: visible;
+                    display: none;
+                    right: auto;
+                    @include transform(translateX(0%));
+                    @include transition(none);
+                    @include box-shadow(none);
+                    text-align: left;
+                    border-top: 0;
+                    transition: 0s;
+                    padding: 0;
+                }
+
+                &>li {
+                    position: relative;
+                    margin-left: 0;
+                    display: block;
+
+                    & .sub-menu {
+                        margin-left: 0px;
+
+                        @media #{$md} {
+                            margin-left: 0;
+                        }
+
+                        @media #{$xs} {
+                            margin-left: 0;
+                        }
+                    }
+
+                    & .sub-nav-toggler {
+                        color: $heading-color;
+                        @include transition(0.3s);
+                    }
+
+                    & a {
+                        display: block;
+                        padding: 0px 30px;
+                        position: relative;
+                        color: $text-color;
+                        @include transition(0.3s);
+                        border-radius: 4px;
+                        margin: 0 0;
+                        line-height: 2.5;
+
+                        @media #{$laptop} {
+                            padding: 0 20px;
+                        }
+
+                        @media #{$lg} {
+                            padding: 0 20px;
+                        }
+
+                        & i {
+                            float: right;
+                            font-size: 16px;
+                            margin-top: 10px;
+
+                            @media #{$md} {
+                                display: none;
+                            }
+
+                            @media #{$xs} {
+                                display: none;
+                            }
+                        }
+
+                        & .sub-nav-toggler {
+                            & i {
+                                display: inline-block;
+                            }
+                        }
+
+                        &:hover {
+                            padding-left: 35px;
+                        }
+                    }
+
+                    & .sub-menu {
+                        right: auto;
+                        left: 100%;
+                        top: 50%;
+                        opacity: 0;
+                        visibility: hidden;
+                        @include transition(0.3s);
+
+                        @media #{$md} {
+                            padding-left: 30px;
+                            @include transition(0s);
+                        }
+
+                        @media #{$xs} {
+                            padding-left: 30px;
+                            @include transition(0s);
+                        }
+
+                        & li {
+                            position: relative;
+
+                            & .sub-menu {
+                                right: auto;
+                                left: 100%;
+                                top: 50%;
+                                opacity: 0;
+                                visibility: hidden;
+                                @include transition(0.3s);
+
+
+                            }
+
+                            &:hover {
+                                & .sub-menu {
+                                    top: 0%;
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        & .sub-menu {
+                            top: 0%;
+                            opacity: 1;
+                            visibility: visible;
+                        }
+
+                        & .sub-nav-toggler {
+                            color: $theme-color;
+                        }
+
+                        &>a {
+                            color: $theme-color;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                & .sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    top: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+@-webkit-keyframes sticky {
+    0% {
+        top: -200px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes sticky {
+    0% {
+        top: -200px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+
+
+
+.appie-header-8-area {
+    & .header-nav-box {
+        & .appie-btn-box {
+            & .main-btn {
+                background: $theme-color-7;
+                border-color: $theme-color-7;
+
+                &:hover {
+                    background: $white;
+                    color: $theme-color-7;
+                }
+            }
+        }
+
+        & .appie-header-main-menu {
+            & ul {
+                &>li {
+                    & a {
+                        &:hover {
+                            color: $theme-color-7;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

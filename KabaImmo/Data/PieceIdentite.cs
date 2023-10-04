@@ -9,8 +9,11 @@
     }
     public class PieceIdentite
     {
+        public Guid Id { get; set; }
         public PieceIdentite TypePicesIdentite { get; set; }
         public DateOnly Expiration { get; set; }
         public string CopyPiece { get; set; }
+
+        public Societe Societe { get; set; } = null;
     }
 }

@@ -1,0 +1,138 @@
+﻿@model IEnumerable<KabaImmo.Data.Lot>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeLot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Couleur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoyerHorsCharges)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Charges)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Superficie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pieces)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SaleDeBain)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateContruction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meubler)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fumeur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Animaux)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Parking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dependances)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Immeuble)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeLot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Couleur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoyerHorsCharges)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Charges)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Superficie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pieces)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SaleDeBain)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateContruction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Meubler)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fumeur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Animaux)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dependances)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Immeuble.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

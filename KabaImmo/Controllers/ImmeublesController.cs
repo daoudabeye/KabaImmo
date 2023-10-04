@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using KabaImmo.Data;
+﻿using KabaImmo.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace KabaImmo.Controllers
 {
     [Authorize]
+    [Route("Bien/Immeubles")]
     public class ImmeublesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,12 +17,14 @@ namespace KabaImmo.Controllers
         }
 
         // GET: Immeubles
+        [Route("")]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Immeuble.ToListAsync());
+            return View("~/Views/Bien/Immeuble/Index.cshtml",await _context.Immeuble.ToListAsync());
         }
 
         // GET: Immeubles/Details/5
+        [Route("Details")]
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null || _context.Immeuble == null)
@@ -41,18 +39,20 @@ namespace KabaImmo.Controllers
                 return NotFound();
             }
 
-            return View(immeuble);
+            return View("~/Views/Bien/Immeuble/Details.cshtml", immeuble);
         }
 
         // GET: Immeubles/Create
+        [Route("Create")]
         public IActionResult Create()
         {
-            return View();
+            return View("~/Views/Bien/Immeuble/Create.cshtml");
         }
 
         // POST: Immeubles/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Route("Create")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Description,Superficie,Note")] Immeuble immeuble)
@@ -64,10 +64,11 @@ namespace KabaImmo.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(immeuble);
+            return View("~/Views/Bien/Immeuble/Create.cshtml", immeuble);
         }
 
         // GET: Immeubles/Edit/5
+        [Route("Edit")]
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null || _context.Immeuble == null)
@@ -80,12 +81,13 @@ namespace KabaImmo.Controllers
             {
                 return NotFound();
             }
-            return View(immeuble);
+            return View("~/Views/Bien/Immeuble/Edit.cshtml", immeuble);
         }
 
         // POST: Immeubles/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Route("Edit")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Description,Superficie,Note")] Immeuble immeuble)
@@ -115,10 +117,11 @@ namespace KabaImmo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(immeuble);
+            return View("~/Views/Bien/Immeuble/Edit.cshtml", immeuble);
         }
 
         // GET: Immeubles/Delete/5
+        [Route("Delete")]
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null || _context.Immeuble == null)
@@ -133,10 +136,11 @@ namespace KabaImmo.Controllers
                 return NotFound();
             }
 
-            return View(immeuble);
+            return View("~/Views/Bien/Immeuble/Delete.cshtml", immeuble);
         }
 
         // POST: Immeubles/Delete/5
+        [Route("Delete")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)

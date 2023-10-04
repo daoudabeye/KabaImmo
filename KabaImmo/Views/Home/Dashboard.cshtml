@@ -1,5 +1,146 @@
 ﻿@{
-    ViewData["Title"] = "Bureau";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="nk-block-head nk-block-head-sm">
+    <div class="nk-block-between">
+        <div class="nk-block-head-content">
+            <h3 class="nk-block-title page-title">Bonjour Beye!</h3>
+        </div><!-- .nk-block-head-content -->
 
+    </div><!-- .nk-block-between -->
+</div>
+
+<div class="nav-dash">
+    <ul class="round-buttons">
+        <li>
+            <div class="round-depth">
+                <div class="depth">
+                    <a href="/landlord/#properties/new" title="">
+                        <img src="~/images/svg/home.svg" width="50" height="50"  style="margin: 5px 0"/>
+                    </a>
+                </div>
+            </div>
+            <h5>Nouveau bien</h5>
+        </li>
+        <li>
+            <div class="round-depth">
+                <div class="depth">
+                    <a href="/landlord/#tenants/new" title="">
+                        <img src="~/images/svg/user-add.svg" width="50" height="50" style="margin: 5px 0" />
+                    </a>
+                </div>
+            </div>
+            <h5>
+                Nouveau locataire
+            </h5>
+        </li>
+        <li>
+            <div class="round-depth">
+                <div class="depth">
+                    <a href="/landlord/#leases/new" title="">
+                        <img src="~/images/svg/key.svg" width="50" height="50" style="margin: 5px 0" />
+                    </a>
+                </div>
+            </div>
+            <h5>Nouvelle location</h5>
+        </li>
+        <li>
+            <div class="round-depth">
+                <div class="depth">
+                    <a href="/landlord/#payments/?FilterPaymentType=rent" title="">
+                        <img src="~/images/svg/file-text.svg" width="50" height="50" style="margin: 5px 0" />
+                    </a>
+                </div>
+            </div>
+            <h5>Mes Quittances</h5>
+        </li>
+        <li>
+            <div class="round-depth">
+                <div class="depth green">
+                    <a href="/landlord/#payments/newincome" title="">
+                        <img src="~/images/svg/plus.svg" width="50" height="50" style="margin: 5px 0" />
+                    </a>
+                </div>
+            </div>
+            <h5>Ajouter un revenu</h5>
+        </li>
+        <li>
+            <div class="round-depth">
+                <div class="depth red">
+                    <a href="/landlord/#payments/newexpense" title="">
+                        <img src="~/images/svg/minus.svg" width="50" height="50" style="margin: 5px 0" />
+                    </a>
+                </div>
+            </div>
+            <h5>Ajouter une dépense</h5>
+        </li>
+    </ul>
+</div>
+
+<div class="nk-block">
+    <div class="row g-gs">
+        <div class="col-xxl-4 col-sm-6">
+            <div class="card">
+                <div class="nk-ecwg nk-ecwg6">
+                    <div class="card-inner">
+                        <div class="card-title-group">
+                            <div class="card-title"><h6 class="title">Today Orders</h6></div>
+                        </div>
+                        <div class="data">
+                            <div class="data-group">
+                                <div class="amount">1,945</div>
+                                <div class="nk-ecwg6-ck"><canvas class="ecommerce-line-chart-s3" id="todayOrders" style="display: block; box-sizing: border-box; height: 40px; width: 100px;" width="100" height="40"></canvas></div>
+                            </div>
+                            <div class="info">
+                                <span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs. last week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-4 col-sm-6">
+            <div class="card">
+                <div class="nk-ecwg nk-ecwg6">
+                    <div class="card-inner">
+                        <div class="card-title-group">
+                            <div class="card-title"><h6 class="title">Today Revenue</h6></div>
+                        </div>
+                        <div class="data">
+                            <div class="data-group">
+                                <div class="amount">$2,338</div>
+                                <div class="nk-ecwg6-ck"><canvas class="ecommerce-line-chart-s3" id="todayRevenue" style="display: block; box-sizing: border-box; height: 40px; width: 100px;" width="100" height="40"></canvas></div>
+                            </div>
+                            <div class="info">
+                                <span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>2.34%</span><span> vs. last week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-4 col-sm-6">
+            <div class="card">
+                <div class="nk-ecwg nk-ecwg6">
+                    <div class="card-inner">
+                        <div class="card-title-group">
+                            <div class="card-title"><h6 class="title">Today Customers</h6></div>
+                        </div>
+                        <div class="data">
+                            <div class="data-group">
+                                <div class="amount">847</div>
+                                <div class="nk-ecwg6-ck"><canvas class="ecommerce-line-chart-s3" id="todayCustomers" style="display: block; box-sizing: border-box; height: 40px; width: 100px;" width="100" height="40"></canvas></div>
+                            </div>
+                            <div class="info">
+                                <span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs. last week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

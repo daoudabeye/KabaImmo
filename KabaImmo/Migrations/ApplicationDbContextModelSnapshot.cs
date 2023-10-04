@@ -25,7 +25,6 @@ namespace KabaImmo.Migrations
             modelBuilder.Entity("KabaImmo.Data.Adresse", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
                     b.Property<string>("Adresse1")
@@ -66,13 +65,87 @@ namespace KabaImmo.Migrations
                     b.ToTable("Adresse");
                 });
 
+            modelBuilder.Entity("KabaImmo.Data.Banque", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CleRib")
+                        .HasColumnType("text");
+
+                    b.Property<string>("CodeBanque")
+                        .HasColumnType("text");
+
+                    b.Property<string>("CodeGuichet")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Iban")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Nom")
+                        .HasColumnType("text");
+
+                    b.Property<string>("NumeroCompte")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Swift")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Banque");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Contact", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("EmailSecondaire")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Mobile")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Web")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contact");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Equipements", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Service")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Equipements");
+                });
+
             modelBuilder.Entity("KabaImmo.Data.Immeuble", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid?>("AdresseId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Description")
@@ -89,9 +162,121 @@ namespace KabaImmo.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AdresseId");
-
                     b.ToTable("Immeuble");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Lot", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("Animaux")
+                        .HasColumnType("boolean");
+
+                    b.Property<decimal>("Charges")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("Couleur")
+                        .HasColumnType("text");
+
+                    b.Property<DateOnly>("DateContruction")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Dependances")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Fumeur")
+                        .HasColumnType("boolean");
+
+                    b.Property<decimal>("LoyerHorsCharges")
+                        .HasColumnType("numeric");
+
+                    b.Property<bool>("Meubler")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Nom")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Parking")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Pieces")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("SaleDeBain")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Superficie")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TypeLocation")
+                        .HasColumnType("text");
+
+                    b.Property<string>("note")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Lot");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.PieceIdentite", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("CopyPiece")
+                        .HasColumnType("text");
+
+                    b.Property<DateOnly>("Expiration")
+                        .HasColumnType("date");
+
+                    b.Property<Guid?>("TypePicesIdentiteId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TypePicesIdentiteId");
+
+                    b.ToTable("PieceIdentite");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Societe", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("Capital")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("Domaine")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Logo")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Nom")
+                        .HasColumnType("text");
+
+                    b.Property<string>("RCS")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Signature")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TVA")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Societe");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -318,13 +503,101 @@ namespace KabaImmo.Migrations
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 
-            modelBuilder.Entity("KabaImmo.Data.Immeuble", b =>
+            modelBuilder.Entity("KabaImmo.Data.Adresse", b =>
+                {
+                    b.HasOne("KabaImmo.Data.Immeuble", "Immeuble")
+                        .WithOne("Adresse")
+                        .HasForeignKey("KabaImmo.Data.Adresse", "Id");
+
+                    b.HasOne("KabaImmo.Data.Societe", "Societe")
+                        .WithMany("Adresses")
+                        .HasForeignKey("Id");
+
+                    b.Navigation("Immeuble");
+
+                    b.Navigation("Societe");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Banque", b =>
                 {
                     b.HasOne("KabaImmo.Data.Adresse", "Adresse")
-                        .WithMany()
-                        .HasForeignKey("AdresseId");
+                        .WithOne("Banque")
+                        .HasForeignKey("KabaImmo.Data.Banque", "Id");
+
+                    b.HasOne("KabaImmo.Data.Societe", "Societe")
+                        .WithMany("Banques")
+                        .HasForeignKey("Id");
 
                     b.Navigation("Adresse");
+
+                    b.Navigation("Societe");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Contact", b =>
+                {
+                    b.HasOne("KabaImmo.Data.Immeuble", "Immeuble")
+                        .WithMany("Contacts")
+                        .HasForeignKey("Id");
+
+                    b.HasOne("KabaImmo.Data.Societe", "Societe")
+                        .WithMany("Contacts")
+                        .HasForeignKey("Id");
+
+                    b.Navigation("Immeuble");
+
+                    b.Navigation("Societe");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Equipements", b =>
+                {
+                    b.HasOne("KabaImmo.Data.Immeuble", "Immeuble")
+                        .WithMany("Equipements")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("KabaImmo.Data.Lot", "Lot")
+                        .WithMany("Equipements")
+                        .HasForeignKey("Id");
+
+                    b.Navigation("Immeuble");
+
+                    b.Navigation("Lot");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Immeuble", b =>
+                {
+                    b.HasOne("KabaImmo.Data.Societe", "Societe")
+                        .WithMany("Immeuble")
+                        .HasForeignKey("Id");
+
+                    b.Navigation("Societe");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Lot", b =>
+                {
+                    b.HasOne("KabaImmo.Data.Immeuble", "Immeuble")
+                        .WithMany("Lot")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Immeuble");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.PieceIdentite", b =>
+                {
+                    b.HasOne("KabaImmo.Data.Societe", "Societe")
+                        .WithMany("PieceIdentite")
+                        .HasForeignKey("Id");
+
+                    b.HasOne("KabaImmo.Data.PieceIdentite", "TypePicesIdentite")
+                        .WithMany()
+                        .HasForeignKey("TypePicesIdentiteId");
+
+                    b.Navigation("Societe");
+
+                    b.Navigation("TypePicesIdentite");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -376,6 +649,40 @@ namespace KabaImmo.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Adresse", b =>
+                {
+                    b.Navigation("Banque");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Immeuble", b =>
+                {
+                    b.Navigation("Adresse");
+
+                    b.Navigation("Contacts");
+
+                    b.Navigation("Equipements");
+
+                    b.Navigation("Lot");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Lot", b =>
+                {
+                    b.Navigation("Equipements");
+                });
+
+            modelBuilder.Entity("KabaImmo.Data.Societe", b =>
+                {
+                    b.Navigation("Adresses");
+
+                    b.Navigation("Banques");
+
+                    b.Navigation("Contacts");
+
+                    b.Navigation("Immeuble");
+
+                    b.Navigation("PieceIdentite");
                 });
 #pragma warning restore 612, 618
         }

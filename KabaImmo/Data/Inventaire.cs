@@ -1,6 +1,6 @@
 ﻿namespace KabaImmo.Data
 {
-	public class Inventaire
-	{
-	}
+    public class Inventaire
+    {
+    }
 }

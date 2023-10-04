@@ -1,0 +1,257 @@
+/*===========================
+    6.APPIE TRAFFICE css 
+===========================*/
+
+.appie-traffic-area {
+  position: relative;
+  overflow: hidden;
+  z-index: 15;
+  background: url("../images/home-9-traffic-thumb.jpg");
+  padding-top: 82px;
+  padding-bottom: 82px;
+  margin-top: 40px;
+  margin-bottom: 120px;
+
+  @media #{$md}{
+    padding-bottom: 62px;
+    margin-bottom: 95px;
+
+      & .row.mt-80 {
+      margin-top: 57px;
+  }
+  }
+
+  & .traffic-thumb {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42%;
+    @media #{$xs} {
+      display: none;
+    }
+    @media #{$md} {
+      display: none;
+    }
+  }
+
+  &.appie-traffic-9-area {
+    .traffic-content-left {
+      padding-left: 90px;
+      @media #{$lg}{
+        padding-left: 0px;
+      }
+      @media #{$md}{
+        padding-left: 0px;
+      }
+      @media #{$xs}{
+        padding-left: 15px;
+      }
+    }
+
+    .traffic-content-right {
+      padding-right: 90px;
+      @media #{$lg}{
+        padding-right: 0px;
+      }
+    }
+
+    .traffic-thumb {
+      position: relative;
+      right: auto;
+      left: auto;
+      transform: none;
+      width: 100%;
+      top: auto;
+
+      img {
+        max-width: none;
+        @media #{$laptop} {
+          max-width: 100%;
+        }
+        @media #{$lg}{
+          max-width: 100%;
+        }
+      }
+
+      &.traffic-thumb-left {
+        margin-left: -200px;
+        @media #{$laptop} {
+          margin-left: 0px;
+        }
+        @media #{$lg}{
+          margin-left: 0px;
+        }
+      }
+      &.traffic-thumb-right {
+        margin-right: -200px;
+        @media #{$laptop} {
+          margin-right: 0px;
+        }
+        @media #{$lg}{
+          margin-right: 0px;
+        }
+      }
+    }
+
+    .appie-traffic-service {
+      padding-right: 10px;
+    }
+  }
+}
+
+.appie-traffic-title {
+  padding-right: 220px;
+  margin-bottom: 43px;
+  @media #{$xs} {
+    padding-right: 0;
+  }
+  & span {
+    font-size: 14px;
+    font-weight: 500;
+    color: $theme-color;
+  }
+  & .title {
+    font-size: 44px;
+    line-height: 54px;
+    @media #{$lg} {
+      font-size: 36px;
+      line-height: 46px;
+    }
+    @media #{$md} {
+      font-size: 36px;
+      line-height: 46px;
+    }
+    @media #{$xs} {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  &.appie-traffic-9-title {
+    padding-right: 0px;
+    margin-bottom: 28px;
+
+    span {
+      font-size: 25px;
+      color: $theme-color-9;
+      font-weight: 500;
+      margin-bottom: 5px;
+
+      @media #{$xs}{
+        font-size: 18px;
+        
+      }
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+      margin-top: 27px;
+    }
+  }
+}
+
+.appie-traffic-service {
+  position: relative;
+  padding-left: 40px;
+  padding-right: 70px;
+  @media #{$lg} {
+    padding-right: 0;
+  }
+  @media #{$md} {
+    margin-bottom: 30px;
+    padding-right: 50px;
+  }
+  @media #{$xs} {
+    margin-bottom: 30px;
+    padding-right: 0px;
+  }
+  & .icon {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    & i {
+      height: 26px;
+      width: 26px;
+      text-align: center;
+      line-height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #84bcfa 0%, #2b70fa 100%);
+      color: $white;
+      font-size: 14px;
+      box-shadow: 0px 6px 10px 0px rgba(16, 73, 189, 0.3);
+    }
+  }
+  & .title {
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 7px;
+  }
+  & p {
+    font-size: 15px;
+  }
+  &.item-2 {
+    & .icon {
+      & i {
+        background: linear-gradient(
+          135deg,
+          rgba(247, 184, 175, 1) 0%,
+          rgba(248, 69, 45, 1) 100%
+        );
+      }
+    }
+  }
+  &.item-3 {
+    & .icon {
+      & i {
+        background: linear-gradient(
+          135deg,
+          rgba(160, 234, 194, 1) 0%,
+          rgba(49, 195, 105, 1) 100%
+        );
+      }
+    }
+  }
+  &.item-4 {
+    & .icon {
+      & i {
+        background: linear-gradient(
+          135deg,
+          rgba(216, 170, 255, 1) 0%,
+          rgba(155, 44, 250, 1) 100%
+        );
+      }
+    }
+  }
+}
+
+.traffic-btn {
+  @media #{$lg} {
+    margin-top: 30px;
+  }
+  @media #{$xs} {
+    text-align: center;
+  }
+  @media #{$sm} {
+    text-align: left;
+  }
+  & a {
+    &.main-btn {
+      background: transparent;
+      color: $heading-color;
+      border: 2px solid #e7eaef;
+      & i {
+        padding-left: 6px;
+      }
+      &:hover {
+        background: $theme-color;
+        color: $white;
+      }
+    }
+  }
+}
+
+.appie-traffic-area-dark {
+  background: none;
+}

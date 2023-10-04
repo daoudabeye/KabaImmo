@@ -1,0 +1,272 @@
+/*===========================
+    7.APPIE TEAM css 
+===========================*/
+
+.appie-team-item {
+  & .thumb {
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    & img {
+      @include transition(0.3s);
+      width: 100%;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: #000;
+      opacity: 0.5;
+      z-index: 9;
+      opacity: 0;
+      @include transition(0.3s);
+    }
+    & ul {
+      position: absolute;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      z-index: 11;
+      opacity: 0;
+      visibility: hidden;
+      @include transition(0.3s);
+      & li {
+        display: inline-block;
+        margin: 0 3px;
+        & a {
+          display: inline-block;
+          height: 36px;
+          width: 36px;
+          border: 2px solid rgba(255, 255, 255, 0.5);
+          text-align: center;
+          line-height: 36px;
+          border-radius: 50px;
+          color: $white;
+          &:hover {
+            background: $white;
+            color: $theme-color;
+            border-color: $white;
+          }
+        }
+      }
+    }
+  }
+  & .content {
+    padding-top: 27px;
+    & .title {
+      font-size: 18px;
+      font-weight: 700;
+      padding-bottom: 8px;
+    }
+    & span {
+      font-size: 14px;
+      color: #81818d;
+    }
+  }
+  &:hover {
+    & .thumb {
+      &::before {
+        opacity: 0.5;
+      }
+      & ul {
+        opacity: 1;
+        visibility: visible;
+      }
+      & img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &.appie-team-item-about {
+    & .thumb {
+      border-radius: 6px;
+      overflow: hidden;
+      &::before {
+        background-color: rgb(43, 112, 250);
+      }
+      & ul {
+        left: 30px;
+        transform: translateX(0);
+        & li {
+          & a {
+            border-radius: 6px;
+          }
+        }
+      }
+    }
+    &:hover {
+      & .thumb {
+        &::before {
+          opacity: 0.9;
+        }
+      }
+    }
+    &.appie-team-item-8 {
+      & .thumb {
+        &::before {
+          background: $theme-color-7;
+        }
+        & ul {
+          & li {
+            & a {
+              &:hover {
+                color: $theme-color-7;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.team-btn {
+  & a {
+    background: transparent;
+    color: $heading-color;
+    border: 2px solid #e7eaef;
+    & i {
+      padding-left: 6px;
+    }
+    &:hover {
+      background: $theme-color;
+      color: $white;
+    }
+  }
+}
+
+.appie-team-about-area {
+  .team-btn {
+    & a {
+      border-color: $theme-color;
+      color: $theme-color;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  &.appie-team-8-area {
+    & .team-btn {
+      & a {
+        border-color: $theme-color-7;
+        color: $theme-color-7;
+        &:hover {
+          background: $theme-color-7;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.appie-team-9-area {
+  background: url("../images/home-9-team-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 120px;
+  padding-bottom: 130px;
+
+  .appie-section-title .appie-title {
+    color: #fff;
+  }
+
+  .appie-section-title p {
+    color: #fff;
+  }
+
+  .appie-team-item {
+    .thumb {
+      &::before {
+        background: $theme-color-8;
+      }
+
+      ul li a:hover {
+        color: #ff4245;
+      }
+    }
+
+    .content {
+      .title {
+        color: #fff;
+      }
+
+      span {
+        color: #fff;
+      }
+    }
+  }
+
+  .team-btn {
+    .main-btn {
+      color: #fff;
+      &:hover {
+        background: $theme-color-8;
+        border-color: $theme-color-8;
+      }
+    }
+  }
+}
+
+.appie-team-10-area {
+  background: #eaf1fb;
+  padding-top: 110px;
+  padding-bottom: 120px;
+
+  @media #{$md}{
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+  @media #{$xs}{
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  .appie-team-10-item {
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    padding-bottom: 20px;
+
+    .thumb {
+      &::before {
+        height: 70px;
+        bottom: 0px;
+        top: auto;
+        background: linear-gradient(90deg, #1580ff 0%, #05beff 100%);
+      }
+
+      ul {
+        width: 100%;
+        text-align: center;
+        top: auto;
+        bottom: 15px;
+
+        li {
+           a{
+            width: 35px;
+            height: 35px;
+            border-radius: 4PX;
+            border-color: transparent;
+           }
+        }
+      }
+    }
+  }
+
+  .team-btn a{
+    border-color: $theme-color;
+    color: $theme-color;
+
+    &:hover{
+    color: #fff;
+
+    }
+  }
+}

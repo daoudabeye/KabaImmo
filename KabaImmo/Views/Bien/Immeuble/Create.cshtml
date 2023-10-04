@@ -1,0 +1,98 @@
+﻿@model KabaImmo.Data.Immeuble
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="nk-block-head nk-block-head-sm">
+    <div class="nk-block-between">
+        <div class="nk-block-head-content">
+            <h3 class="nk-block-title page-title">Nouvel Immeuble</h3>
+        </div><!-- .nk-block-head-content -->
+        <div class="nk-block-head-content">
+        </div><!-- .nk-block-head-content -->
+    </div><!-- .nk-block-between -->
+</div>
+<div class="alert alert-info alert-icon">
+    <em class="icon ni ni-alert-circle"></em> <strong>Information</strong>
+    Cette page concerne seulement les propriétaires d'immeubles et permet de renseigner les tantièmes de chaque lot, afin de ventiler les dépenses communes.
+    Vous devriez créer les lots dans la rubrique Biens avant de pouvoir remplir ce formulaire.
+</div>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#tabItem5">
+            <em class="icon ni ni-user"></em><span>Information Générale</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#tabItem6"><em class="icon ni ni-lock-alt"></em><span>nav</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#tabItem7">
+            <em class="icon ni ni-bell"></em><span>Lots</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#tabItem8"><em class="icon ni ni-link"></em><span>Information Complementaire</span></a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active" id="tabItem5">
+        <div class="card card-bordered card-preview">
+            <div class="card-inner"><div class="preview-block">
+                <span class="preview-title-lg overline-title">Default Preview</span><
+                    div class="row gy-4"><div class="col-sm-6"><div class="form-group">
+                        <label class="form-label" for="default-01">Input text Default</label><div class="form-control-wrap"><input type="text" class="form-control" id="default-01" placeholder="Input placeholder"></div></div></div><div class="col-sm-6"><div class="form-group"><label class="form-label" for="default-05">Input with Text</label><div class="form-control-wrap"><div class="form-text-hint"><span class="overline-title">Usd</span></div><input type="text" class="form-control" id="default-05" placeholder="Input placeholder"></div></div></div><div class="col-sm-6"><div class="form-group"><label class="form-label" for="default-03">Input with Icon Left</label><div class="form-control-wrap"><div class="form-icon form-icon-left"><em class="icon ni ni-user"></em></div><input type="text" class="form-control" id="default-03" placeholder="Input placeholder"></div></div><div class="form-group"><label class="form-label" for="default-04">Input with Icon Right</label><div class="form-control-wrap"><div class="form-icon form-icon-right"><em class="icon ni ni-mail"></em></div><input type="text" class="form-control" id="default-04" placeholder="Input placeholder"></div></div></div><div class="col-sm-6"><div class="form-group"><label class="form-label" for="default-textarea">Textarea</label><div class="form-control-wrap"><textarea class="form-control no-resize" id="default-textarea">Large text area content</textarea></div></div></div><div class="col-sm-6"><div class="form-group"><label class="form-label" for="default-06">Default File Upload</label><div class="form-control-wrap"><div class="form-file"><input type="file" multiple="" class="form-file-input" id="customFile"><label class="form-file-label" for="customFile">Choose file</label></div></div></div><div class="form-group"><label class="form-label" for="default-06">Default Select</label><div class="form-control-wrap "><div class="form-control-select"><select class="form-control" id="default-06"><option value="default_option">Default Option</option><option value="option_select_name">Option select name</option><option value="option_select_name">Option select name</option></select></div></div></div></div><div class="col-sm-6"><div class="form-group"><label class="form-label" for="default-07">Default Select Multiple</label><div class="form-control-wrap"><div class="form-control-select-multiple"><select class="form-select" id="default-07" multiple="" aria-label="multiple select example"><option value="option_select0">Default Option</option><option value="option_select1">Option select name</option><option value="option_select2">Option select name</option><option value="option_select2">Option select name</option><option value="option_select2">Option select name</option></select></div></div></div></div></div><hr class="preview-hr"><span class="preview-title-lg overline-title">State Preview</span><div class="row gy-4"><div class="col-sm-6"><div class="form-group"><label class="form-label" for="default-1-01">Focus State</label><input type="text" class="form-control focus" id="default-1-01" placeholder="Input placeholder"></div></div><div class="col-sm-6"><div class="form-group"><label class="form-label" for="default-1-02">Filled State</label><input type="text" class="form-control" id="default-1-02" value="Abu Bin Ishtiyak"></div></div><div class="col-sm-6"><div class="form-group"><label class="form-label" for="default-1-04">Error State</label><input type="text" class="form-control error" id="default-1-04" placeholder="Input placeholder"></div></div><div class="col-sm-6"><div class="form-group"><label class="form-label" for="default-1-03">Disabled State</label><input type="text" class="form-control" id="default-1-03" disabled="" value="info@softnio.com"></div></div></div><hr class="preview-hr"><span class="preview-title-lg overline-title">Size Preview </span><div class="row gy-4 align-center"><div class="col-lg-4"><div class="form-group"><div class="form-control-wrap"><input type="text" class="form-control form-control-lg" placeholder="Input Large"></div></div></div><div class="col-lg-4"><div class="form-group"><div class="form-control-wrap"><input type="text" class="form-control" placeholder="Input Regular"></div></div></div><div class="col-lg-4"><div class="form-group"><div class="form-control-wrap"><input type="text" class="form-control form-control-sm" placeholder="Input Small"></div></div></div><div class="col-12"><p class="text-soft">Use <code>.form-control-lg</code> or <code>.form-control-sm</code> with <code>.form-control</code> for large or small input box.</p></div></div></div></div></div>
+    </div>
+    <div class="tab-pane" id="tabItem6">
+        <p>content</p>
+    </div>
+    <div class="tab-pane" id="tabItem7">
+        <p>contnet</p>
+    </div>
+    <div class="tab-pane" id="tabItem8">
+        <p>contnet</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Superficie" class="control-label"></label>
+                <input asp-for="Superficie" class="form-control" />
+                <span asp-validation-for="Superficie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note" class="control-label"></label>
+                <input asp-for="Note" class="form-control" />
+                <span asp-validation-for="Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
