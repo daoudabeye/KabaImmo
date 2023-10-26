@@ -212,11 +212,14 @@ namespace KabaImmo.Migrations
                     b.Property<int>("Superficie")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Type")
-                        .HasColumnType("text");
+                    b.Property<int>("TypeHabitat")
+                        .HasColumnType("integer");
 
                     b.Property<string>("TypeLocation")
                         .HasColumnType("text");
+
+                    b.Property<int>("TypeLot")
+                        .HasColumnType("integer");
 
                     b.Property<string>("note")
                         .HasColumnType("text");

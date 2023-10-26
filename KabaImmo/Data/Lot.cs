@@ -59,12 +59,19 @@ namespace KabaImmo.Data
     public class Lot
     {
         public Guid Id { get; set; }
+        [Description("Saisir un identifiant, référence ou numéro unique.")]
         public string Nom { get; set; }
+        [Description("Description du lot")]
         public string Description { get; set; }
+        [Description("Type de lot")]
         public TypeLot TypeLot { get; set; }
+        [Description("Type Habitat")]
         public TypeHabitat TypeHabitat { get; set;}
+        [Description("Couleur")]
         public string Couleur { get; set; }
-        public string TypeLocation { get; set; }
+        [Description("Saisir un identifiant, référence ou numéro unique.")]
+        public TypeLocation TypeLocation { get; set; }
+        [Description("Loyer Hors Charges")]
         public decimal LoyerHorsCharges { get; set; }
         public decimal Charges { get; set; }
         public int Superficie { get; set; }
@@ -81,6 +88,5 @@ namespace KabaImmo.Data
         public ICollection<Equipements> Equipements { get; set; }
 
     }
-
 
 }

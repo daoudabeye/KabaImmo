@@ -39,6 +39,13 @@
         Virement
     }
 
+    public enum TypeLocation
+    {
+        MEUBLER,
+        VIDE,
+        SAISONNIERE
+    }
+
     public class Location
     {
         public Guid Id { get; set; }

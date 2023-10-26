@@ -6,8 +6,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="nk-block nk-block-lg">
-    <form asp-action="Create">
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<div class="nk-block nk-block-lg ">
+    <form asp-action="Create" class="gy-3">
         <ul class="nav nav-tabs mt-n3" role="tablist">
             <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-toggle="tab" href="#tabItem1" aria-selected="true" role="tab" tabindex="-1">Information Générale</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" data-bs-toggle="tab" href="#tabItem2" aria-selected="false" role="tab" tabindex="-1">Information Complementaires</a></li>
@@ -21,20 +25,23 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane active show" id="tabItem1" role="tabpanel">
-                <div class="card card-bordered">
+                <div class="card card-bordered wide-md">
                     <div class="card-inner">
                         <div class="card-head">
                             <h5 class="card-title">Informations Générale</h5>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         </div>
                         <div class="row g-3 align-center">
                             <div class="col-lg-5">
-                                <div class="form-group"><label class="form-label" for="site-name">Type</label>
-                                    <span class="form-note">Selectionner le Type de bien</span></div>
+                                <div class="form-group">
+                                    <label asp-for="Id" class="control-label"></label>
+                                    <span class="form-note">Selectionner le Type de bien</span>
+                                </div>
                             </div>
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        @Html.DropDownListFor(l=>l.TypeLot,new SelectList(TypeLot.GetValues(typeof(TypeLot)) , TypeLot.APPARTEMENTS ),new { @class = "form-select js-select2" })
+                                        <select asp-for="Id" class="form-control" asp-items="ViewBag.Id"></select>
                                     </div>
                                 </div>
                             </div>
@@ -53,35 +60,164 @@
                         </div>
                         <div class="row g-3 align-center">
                             <div class="col-lg-5">
-                                <div class="form-group"><label class="form-label">Site Copyright</label><span class="form-note">Copyright information of your website.</span></div>
+                                <div class="form-group"><label class="form-label" asp-for="TypeLot">Type</label>
+                                    <span class="form-note">Selectionner le Type de bien</span></div>
                             </div>
                             <div class="col-lg-7">
                                 <div class="form-group">
-                                    <div class="form-control-wrap"><input type="text" class="form-control" id="site-copyright" value="© 2023, DashLite. All Rights Reserved."></div>
+                                    <div class="form-control-wrap">
+                                        @Html.DropDownListFor(l=>l.TypeLot,new SelectList(TypeLot.GetValues(typeof(TypeLot)) , TypeLot.APPARTEMENTS ),new { @class = "form-select js-select2" })
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
+
+                        <span class="preview-title-lg overline-title mt-4">Couleur</span>
+                        <hr class="mt-0"/>
                         <div class="row g-3 align-center">
                             <div class="col-lg-5">
-                                <div class="form-group"><label class="form-label">Main Website</label><span class="form-note">Specify the URL if your main website is external.</span></div>
+                                <div class="form-group">
+                                    <label asp-for="Couleur" class="control-label"></label><span class="form-note">Selectionner une couleur</span>
+                                    <span asp-validation-for="Couleur" class="text-danger"></span>
+                                </div>
                             </div>
                             <div class="col-lg-7">
                                 <div class="form-group">
-                                    <div class="form-control-wrap"><input type="text" class="form-control" name="site-url" value="https://www.softnio.com"></div>
+                                    <div class="form-control-wrap"><input asp-for="Couleur" class="form-control" /></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="preview-title-lg overline-title mt-4">Information Locative</span>
+                        <hr class="mt-0" />
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label asp-for="TypeLocation" class="control-label"></label><span class="form-note">Copyright information of your website.</span>
+                                    <span asp-validation-for="TypeLocation" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <div class="form-control-wrap"><input asp-for="TypeLocation" class="form-control" /></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row g-3 align-center">
                             <div class="col-lg-5">
-                                <div class="form-group"><label class="form-label" for="site-off">Maintanance Mode</label><span class="form-note">Enable to make website make offline.</span></div>
+                                <div class="form-group">
+                                    <label asp-for="LoyerHorsCharges" class="control-label"></label><span class="form-note">Copyright information of your website.</span>
+                                    <span asp-validation-for="LoyerHorsCharges" class="text-danger"></span>
+                                </div>
                             </div>
                             <div class="col-lg-7">
                                 <div class="form-group">
-                                    <div class="custom-control custom-switch"><input type="checkbox" class="custom-control-input" name="reg-public" id="site-off"><label class="custom-control-label" for="site-off">Offline</label></div>
+                                    <div class="form-control-wrap"><input asp-for="LoyerHorsCharges" class="form-control" /></div>
                                 </div>
                             </div>
                         </div>
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label asp-for="Charges" class="control-label"></label><span class="form-note">Copyright information of your website.</span>
+                                    <span asp-validation-for="Charges" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <div class="form-control-wrap"><input asp-for="Charges" class="form-control" /></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="preview-title-lg overline-title mt-4">Description</span>
+                        <hr class="mt-0" />
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label asp-for="Superficie" class="control-label"></label><span class="form-note">Copyright information of your website.</span>
+                                    <span asp-validation-for="Superficie" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <div class="form-control-wrap"><input asp-for="Superficie" class="form-control" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label asp-for="Pieces" class="control-label"></label><span class="form-note">Nombre de pieces.</span>
+                                    <span asp-validation-for="Pieces" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <div class="form-control-wrap"><input asp-for="Pieces" class="form-control" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label asp-for="SaleDeBain" class="control-label"></label><span class="form-note">Copyright information of your website.</span>
+                                    <span asp-validation-for="SaleDeBain" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <div class="form-control-wrap"><input asp-for="SaleDeBain" class="form-control" /></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label asp-for="DateContruction" class="control-label"></label><span class="form-note">Copyright information of your website.</span>
+                                    <span asp-validation-for="DateContruction" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <div class="form-control-wrap"><input asp-for="DateContruction" class="form-control" /></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label asp-for="Description" class="control-label"></label><span class="form-note">Copyright information of your website.</span>
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        @Html.TextAreaFor(l=>l.Description, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label asp-for="note" class="control-label"></label><span class="form-note">Copyright information of your website.</span>
+                                    <span asp-validation-for="note" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        @Html.TextAreaFor(l=>l.note, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -143,118 +279,13 @@
 
         </div>
 
-        <div class="card-footer border-top text-muted">
-            <div class="row g-3">
-                <div class="col-lg-7 offset-lg-5">
-                    <div class="form-group mt-2"><button type="submit" class="btn btn-lg btn-primary">Update</button></div>
-                </div>
+        <div class="row g-3">
+            <div class="col-lg-7 offset-lg-5">
+                <div class="form-group mt-2"><button type="submit" class="btn btn-lg btn-primary">Update</button></div>
             </div>
         </div>
     </form>
     
-</div>
-
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <select asp-for="Id" class ="form-control" asp-items="ViewBag.Id"></select>
-            </div>
-            <div class="form-group">
-                
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TypeLot" class="control-label"></label>
-                <input asp-for="TypeLot" class="form-control" />
-                <span asp-validation-for="TypeLot" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Couleur" class="control-label"></label>
-                <input asp-for="Couleur" class="form-control" />
-                <span asp-validation-for="Couleur" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TypeLocation" class="control-label"></label>
-                <input asp-for="TypeLocation" class="form-control" />
-                <span asp-validation-for="TypeLocation" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LoyerHorsCharges" class="control-label"></label>
-                <input asp-for="LoyerHorsCharges" class="form-control" />
-                <span asp-validation-for="LoyerHorsCharges" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Charges" class="control-label"></label>
-                <input asp-for="Charges" class="form-control" />
-                <span asp-validation-for="Charges" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Superficie" class="control-label"></label>
-                <input asp-for="Superficie" class="form-control" />
-                <span asp-validation-for="Superficie" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Pieces" class="control-label"></label>
-                <input asp-for="Pieces" class="form-control" />
-                <span asp-validation-for="Pieces" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SaleDeBain" class="control-label"></label>
-                <input asp-for="SaleDeBain" class="form-control" />
-                <span asp-validation-for="SaleDeBain" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DateContruction" class="control-label"></label>
-                <input asp-for="DateContruction" class="form-control" />
-                <span asp-validation-for="DateContruction" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="note" class="control-label"></label>
-                <input asp-for="note" class="form-control" />
-                <span asp-validation-for="note" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Meubler" /> @Html.DisplayNameFor(model => model.Meubler)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Fumeur" /> @Html.DisplayNameFor(model => model.Fumeur)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Animaux" /> @Html.DisplayNameFor(model => model.Animaux)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Parking" class="control-label"></label>
-                <input asp-for="Parking" class="form-control" />
-                <span asp-validation-for="Parking" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Dependances" class="control-label"></label>
-                <input asp-for="Dependances" class="form-control" />
-                <span asp-validation-for="Dependances" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

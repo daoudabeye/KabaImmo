@@ -57,6 +57,8 @@
 
     <!-- ... but if something goes wrong get Jquery from local file -->
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="_framework/blazor.server.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
